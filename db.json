@@ -1,0 +1,22 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "phone": "(123) 456-7890",
+      "dob": "1990-01-01",
+      "gender": "male",
+      "hobbies": ["reading", "swimming"]
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "janedoe@gmail.com",
+      "phone": "(234) 567-8901",
+      "dob": "1995-05-05",
+      "gender": "female",
+      "hobbies": ["cooking", "hiking"]
+    }
+  ]
+}
