@@ -1,18 +1,17 @@
-import { Box, Grid, TextField, FormControl, FormLabel, RadioGroup, Radio, FormControlLabel, Button, FormGroup, Checkbox, FormHelperText, styled, Typography } from '@mui/material';
-import { useState } from 'react';
+import { Box, TextField, FormControl, FormLabel, RadioGroup, Radio, SnackbarContent,Snackbar, FormControlLabel, Button, FormGroup, Checkbox, FormHelperText, Typography, CircularProgress } from '@mui/material';
+import { useContext, useState } from 'react';
+import { context } from '../ContextApi/ContextApi';
+import { useNavigate } from 'react-router-dom';
 
-const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
-    const Form = styled('form')({
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '1rem',
-        padding: '1rem',
-        border: '1px solid #ccc',
-        borderRadius: '8px',
-    });
-    const [values, setValues] = useState(initialValues || {});
+
+const EmployeeForm = () => {
+    const navigate = useNavigate()
+    const [values, setValues] = useState({});
     const [errors, setErrors] = useState({});
+    const { addEmployee, loading } = useContext(context)
+
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
 
     const handleChange = (e) => {
         setValues((prevValues) => ({
@@ -41,8 +40,15 @@ const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
             setErrors(validationErrors);
             return;
         }
-        onSubmit(values);
+        addEmployee(values);
+        setValues({});
+        setOpenSnackbar(true);
+        setSnackbarMessage('Employee added successfully');
+        setTimeout(() => {
+            navigate('/table')
+        }, 2000);
     };
+
 
     const validate = (values) => {
         const errors = {};
@@ -59,7 +65,7 @@ const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
     };
 
     const handleCancel = () => {
-        onCancel();
+        setValues({})
     };
     return (
         <Box
@@ -70,7 +76,7 @@ const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
                 height: '100vh',
                 backgroundImage: 'url(https://img.freepik.com/premium-photo/cartoon-character-freelancer-with-laptop-his-hands-flies-chair-like-rocket-innovation-startup-concept-3d-illustration_325164-1185.jpg?w=996)',
                 backgroundSize: 'cover',
-                mt:'67px'
+                mt: '67px'
             }}
         >
             <Box
@@ -87,7 +93,13 @@ const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
                 <Typography variant="h3" mt={-2} mb={2} align="center" sx={{ fontFamily: 'Montserrat', fontWeight: 'bold', letterSpacing: '1px' }}>
                     Registration form
                 </Typography>
-                <Form onSubmit={handleSubmit}>
+                <Box component="form" onSubmit={handleSubmit} sx={{
+                     display: 'flex', flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    padding: '1rem',
+                    border: '1px solid #ccc',
+                    borderRadius: '8px'}}>
                     <TextField
                         label="Name"
                         name="name"
@@ -175,40 +187,55 @@ const EmployeeForm = ({ onSubmit, onCancel, initialValues }) => {
                                 }
                                 label="Reading"
                             />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={(values.hobbies || []).includes('traveling')}
-                                    onChange={handleCheckboxChange}
-                                    name="traveling"
-                                    value="traveling"
-                                />
-                            }
-                            label="Traveling"
-                        />
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    checked={(values.hobbies || []).includes('painting')}
-                                    onChange={handleCheckboxChange}
-                                    name="painting"
-                                    value="painting"
-                                />
-                            }
-                            label="Painting"
-                        />
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={(values.hobbies || []).includes('traveling')}
+                                        onChange={handleCheckboxChange}
+                                        name="traveling"
+                                        value="traveling"
+                                    />
+                                }
+                                label="Traveling"
+                            />
+                            <FormControlLabel
+                                control={
+                                    <Checkbox
+                                        checked={(values.hobbies || []).includes('painting')}
+                                        onChange={handleCheckboxChange}
+                                        name="painting"
+                                        value="painting"
+                                    />
+                                }
+                                label="Painting"
+                            />
                         </FormGroup>
                         <FormHelperText>{errors.hobbies}</FormHelperText>
                     </FormControl>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 2 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-evenly', mt: 2 }}>
                         <Button variant="outlined" onClick={handleCancel}>
                             Cancel
                         </Button>
-                        <Button type="submit" variant="contained" sx={{ ml: 2 }}>
-                            Submit
+                        <Button variant="contained" color="primary" type='submit' >
+                            {loading ? <CircularProgress size={24} /> : 'Submit'}
                         </Button>
                     </Box>
-                </Form>
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                        open={openSnackbar}
+                        autoHideDuration={3000} // Hide after 3 seconds
+                        onClose={() => setOpenSnackbar(false)}
+                    >
+                        <SnackbarContent
+                            sx={{ bgcolor:'greenyellow' }}
+                            message={snackbarMessage}
+                        />
+                    </Snackbar>
+
+                </Box>
             </Box>
         </Box>
     );

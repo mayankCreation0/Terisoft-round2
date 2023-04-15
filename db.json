@@ -1,22 +1,144 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "John Doe",
-      "email": "johndoe@gmail.com",
-      "phone": "(123) 456-7890",
-      "dob": "1990-01-01",
+      "name": "Mayank Raj",
+      "email": "mayank@gmail.com",
+      "phone": "7050768216",
+      "dob": "2023-02-08",
       "gender": "male",
-      "hobbies": ["reading", "swimming"]
+      "hobbies": [
+        "traveling",
+        "reading"
+      ],
+      "id": "933afe0b-e32a-482a-b201-d8ade09c1a2e"
     },
     {
-      "id": 2,
-      "name": "Jane Doe",
-      "email": "janedoe@gmail.com",
-      "phone": "(234) 567-8901",
-      "dob": "1995-05-05",
+      "name": "Mayank raj",
+      "email": "mayankrj1224@gmail.com",
+      "phone": "7050768216",
+      "dob": "2001-02-12",
+      "gender": "male",
+      "hobbies": [
+        "traveling",
+        "reading"
+      ],
+      "id": "21d76c46-ef7b-4ebe-9df4-56d798abebd7"
+    },
+    {
+      "name": "Ayush",
+      "email": "m@g.in",
+      "phone": "+91 70507-68216",
+      "dob": "2023-03-26",
+      "gender": "male",
+      "hobbies": [
+        "traveling",
+        "painting",
+        "reading"
+      ],
+      "id": "4701f11c-649f-4c0c-8e46-40b10d528168"
+    },
+    {
+      "name": "Mayank raj",
+      "email": "mhsbdjhdhjd",
+      "phone": "3543543543",
+      "dob": "2023-04-04",
       "gender": "female",
-      "hobbies": ["cooking", "hiking"]
+      "hobbies": [
+        "traveling",
+        "reading",
+        "painting"
+      ],
+      "id": "1760b4c9-5346-4ede-b736-8ba250ff2f50"
+    },
+    {
+      "name": "checking",
+      "hobbies": [
+        "painting"
+      ],
+      "email": "vmbdfvh@hj.inn",
+      "phone": "5smdfhfv",
+      "gender": "female",
+      "dob": "2023-04-04",
+      "id": "fb80acb7-c066-43d8-95d0-1b745a23beba"
+    },
+    {
+      "name": "nikku raj",
+      "email": "m@g.in",
+      "phone": "+91 70507-68216",
+      "dob": "2023-04-17",
+      "gender": "male",
+      "hobbies": [
+        "traveling"
+      ],
+      "id": "6530ed85-7195-4b35-be46-20c001bbe787"
+    },
+    {
+      "name": "nikku raj",
+      "email": "m@g.in",
+      "phone": "+91 70507-68216",
+      "dob": "2023-04-17",
+      "gender": "male",
+      "hobbies": [
+        "traveling"
+      ],
+      "id": "94872c7c-162f-4848-a49c-569df5b51f3b"
+    },
+    {
+      "name": "new user24",
+      "email": "new24@g.in",
+      "phone": "new224242",
+      "dob": "2023-04-04",
+      "hobbies": [
+        "traveling",
+        "reading",
+        "painting"
+      ],
+      "id": "92e4953e-c3fb-4285-ba2a-1490335db672"
+    },
+    {
+      "name": "new user",
+      "email": "new@g.in",
+      "phone": "new",
+      "dob": "2023-04-18",
+      "gender": "other",
+      "hobbies": [
+        "painting"
+      ],
+      "id": "ab93b421-9a4e-4949-8d61-f4857dede38d"
+    },
+    {
+      "name": "new user",
+      "email": "new@g.in",
+      "phone": "new",
+      "dob": "2023-04-18",
+      "gender": "other",
+      "hobbies": [
+        "painting"
+      ],
+      "id": "0023dad7-5b82-4100-a588-e976c4731ad3"
+    },
+    {
+      "name": "leru",
+      "email": "leru@g.in",
+      "phone": "leruuuu",
+      "dob": "2023-04-03",
+      "gender": "female",
+      "hobbies": [
+        "traveling"
+      ],
+      "id": "9ad14919-70ab-4420-a381-0b856857c43e"
+    },
+    {
+      "name": "Dummy data",
+      "email": "dummy@gmsil.cin",
+      "phone": "54545454545",
+      "dob": "2023-04-12",
+      "gender": "male",
+      "hobbies": [
+        "traveling",
+        "reading"
+      ],
+      "id": "8df814ae-4530-4b9d-bb0b-9764925fc435"
     }
   ]
 }
