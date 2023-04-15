@@ -1,4 +1,4 @@
-# Getting Started with Crloning the Repository
+# Getting Started with Cloning the Repository
     using 'git clone' command
 
 ## Install the npm packages
@@ -19,5 +19,5 @@
 #### Now you can view details of any employee or delete it from database
     ![view employee details](./images/Screenshot%20(61).png)
 
-#### And lastlyyou can perform the Update operation the modal will open and close
+#### And lastly you can perform the Update operation, the modal will open and close
     ![update employee details](./images//Screenshot%20(62).png)
